@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+    <ul>
+        {% for num_info in nums_info %}
+        {%  if num_info.1 == 0%}
+        <p>Число {{ num_info.0 }} чётное</p>
+        {% else %}
+        <p>Число {{ num_info.0 }} нечётное</p>
+        {%  endif %}
+        {%  endfor %}
+    </ul>
+</body>
+</html>

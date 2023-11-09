@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список студентов</title>
+</head>
+<body>
+<p align="right">
+    <a href="{{ auth_status.value }}">{{ login }} {{ auth_status.name }}</a>
+</p>
+<a href="/university">Список университетов</a>
+<a href="create">Добавить студента</a>
+<h2>Список университетов</h2>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Год поступления</th>
+        <th>Университет</th>
+    </thead>
+    {% for student in items %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td> <a href="update/{{ student.id }}/name">{{ student.name }}</a> </td>
+        <td> <a href="update/{{ student.id }}/surname">{{ student.surname }}</a> </td>
+        <td> <a href="update/{{ student.id }}/father_name">{{ student.father_name }}</a> </td>
+        <td> <a href="update/{{ student.id }}/entrance_year">{{ student.entrance_year }}</a> </td>
+        <td> <a href="update/{{ student.id }}/university_id">{{ student.university_id }}</a> </td>
+        <td><a href="delete/{{ student.id }}">Удалить</a>></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

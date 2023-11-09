@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список университетов</title>
+</head>
+<body>
+<p align="right">
+    <a href="{{ auth_status.value }}">{{ login }} {{ auth_status.name }}</a>
+</p>
+<a href="/student">Список студентов</a>
+<a href="create">Добавить университет</a>
+<h2>Список университетов</h2>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Название</th>
+        <th>Сокращённое название</th>
+        <th>Дата основания</th>
+    </thead>
+    {% for university in items %}
+    <tr>
+        <td>{{ university.id }}</td>
+        <td> <a href="update/{{ university.id }}/name">{{ university.name }}</a> </td>
+        <td> <a href="update/{{ university.id }}/short_name">{{ university.short_name }}</a> </td>
+        <td> <a href="update/{{ university.id }}/foundation_date">{{ university.foundation_date }}</a> </td>
+        <td><a href="delete/{{ university.id }}">Удалить</a>></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

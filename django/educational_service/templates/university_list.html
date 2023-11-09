@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список университетов</title>
+</head>
+<body>
+<a href="/educational_service/student">Список студентов</a>
+<a href="create">Добавить университет</a>
+<a href="update">Редактировать университет</a>
+<h2>Список университетов</h2>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Название</th>
+        <th>Сокращённое название</th>
+        <th>Дата основания</th>
+    </thead>
+    {% for university in universities %}
+    <tr>
+        <td>{{ university.id }}</td>
+        <td>{{ university.name }}</td>
+        <td>{{ university.short_name }}</td>
+        <td>{{ university.foundation_date }}</td>
+        <td><a href="delete/{{ university.id }}">Удалить</a>></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

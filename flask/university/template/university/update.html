@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обновление университета</title>
+</head>
+<body>
+
+<form method="POST" action="/university/update/{{ id }}/{{ field_name }}">
+    <div>{{ form.value.label }}: {{ form.value() }}</div>
+    <input type="submit" value="Обновить">
+</form>
+</body>
+</html>

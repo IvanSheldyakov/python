@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление университета</title>
+</head>
+<body>
+
+<form method="POST" action="/university/create">
+    <div>{{ form.name.label }}: {{ form.name() }}</div>
+    <div>{{ form.short_name.label }}: {{ form.short_name() }}</div>
+    <div>{{ form.foundation_date.label }}: {{ form.foundation_date() }}</div>
+    <input type="submit" value="Добавить">
+</form>
+</body>
+</html>
